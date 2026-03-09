@@ -12,9 +12,7 @@
             --dark: #050505;
             --glass: rgba(255, 255, 255, 0.03);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             background: var(--dark);
             color: #fff;
@@ -22,22 +20,18 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-
-        /* --- BACKGROUND ANIMADO (ESTRELAS E BOLHAS) --- */
         #bg-canvas {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background: radial-gradient(circle at center, #111 0%, #050505 100%);
         }
-
         .star {
             position: absolute;
             background: #fff;
             border-radius: 50%;
             animation: twinkle var(--d) infinite ease-in-out;
         }
-
         .bubble {
             position: absolute;
             bottom: -100px;
@@ -46,21 +40,16 @@
             opacity: 0.3;
             animation: rise var(--s) infinite linear;
         }
-
         @keyframes twinkle {
             0%, 100% { opacity: 0.2; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.4); box-shadow: 0 0 10px #fff; }
         }
-
         @keyframes rise {
             0% { transform: translateY(0) rotate(0deg); opacity: 0; }
             20% { opacity: 0.3; }
             100% { transform: translateY(-125vh) rotate(360deg); opacity: 0; }
         }
-
-        /* --- INTERFACE --- */
         header { padding: 80px 20px; text-align: center; }
-        
         h1 { 
             font-family: 'Cinzel', serif; 
             font-size: clamp(2rem, 8vw, 3.5rem);
@@ -70,14 +59,12 @@
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
         }
-
         .showcase {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px; padding: 40px 5%;
             max-width: 1400px; margin: 0 auto;
         }
-
         .card {
             background: var(--glass);
             backdrop-filter: blur(15px);
@@ -86,130 +73,66 @@
             transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             border-radius: 5px;
         }
-
         .card:hover { 
             border-color: var(--gold); 
             transform: translateY(-15px); 
             background: rgba(197, 160, 89, 0.05);
             box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
-
         .card img { 
-            width: 100%; 
-            height: 220px; 
-            object-fit: contain; 
-            margin-bottom: 20px;
+            width: 100%; height: 220px; 
+            object-fit: contain; margin-bottom: 20px;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
         }
-        
         h3 { 
-            font-family: 'Cinzel', serif; 
-            font-size: 0.9rem; 
-            letter-spacing: 1px; 
-            margin-bottom: 20px; 
-            min-height: 2.5rem; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            line-height: 1.4;
+            font-family: 'Cinzel', serif; font-size: 0.9rem; 
+            letter-spacing: 1px; margin-bottom: 20px; min-height: 2.5rem; 
+            display: flex; align-items: center; justify-content: center;
         }
-
         .btn {
-            display: inline-block;
-            text-decoration: none;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 12px 25px;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            font-weight: 600;
-            transition: 0.4s;
-            width: 100%;
+            display: inline-block; text-decoration: none; color: var(--gold);
+            border: 1px solid var(--gold); padding: 12px 25px;
+            font-size: 0.65rem; letter-spacing: 3px; font-weight: 600;
+            transition: 0.4s; width: 100%;
         }
-
-        .btn:hover { 
-            background: var(--gold); 
-            color: #000; 
-            box-shadow: 0 0 20px var(--gold); 
-        }
-
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 20px var(--gold); }
         footer { text-align: center; padding: 50px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-
     <div id="bg-canvas"></div>
-
     <header>
         <h1>Golden Fragrance</h1>
         <p style="color: var(--gold); letter-spacing: 5px; font-size: 0.75rem; margin-top: 15px;">THE ELITE COLLECTION</p>
     </header>
-
     <main class="showcase">
         <div class="card">
-            <img src="img/jadore-lor.png">
-            <h3>Christian Dior J'Adore L'Or</h3>
-            <a href="https://amzn.to/4ceffa" target="_blank" class="btn">RESERVAR</a>
+            <img src="img/jadore.png">
+            <h3>J'Adore de Christian Dior Eau de Parfum</h3>
+            <a href="https://amzn.to/4ulgpkZ" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
             <img src="img/sauvage.png">
-            <h3>Dior Sauvage Elixir</h3>
-            <a href="https://amzn.to/3v09I6H" target="_blank" class="btn">RESERVAR</a>
+            <h3>Dior Sauvage Elixir Intense</h3>
+            <a href="https://amzn.to/40U1DEd" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
             <img src="img/bleu-chanel.png">
             <h3>Bleu De Chanel Parfum</h3>
-            <a href="https://amzn.to/3T7yR9s" target="_blank" class="btn">RESERVAR</a>
+            <a href="https://amzn.to/4dbvaAA" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
             <img src="img/baccarat.png">
             <h3>MFK Baccarat Rouge 540</h3>
-            <a href="https://amzn.to/48I6pZ2" target="_blank" class="btn">RESERVAR</a>
+            <a href="https://amzn.to/4lmsLFl" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
-            <img src="img/lost-cherry.png">
-            <h3>Tom Ford Lost Cherry</h3>
-            <a href="https://amzn.to/49I8D6o" target="_blank" class="btn">RESERVAR</a>
+            <img src="img/tobacco-vanille.png">
+            <h3>Tom Ford Private Blend Tobacco Vanille</h3>
+            <a href="https://amzn.to/4lyGvOf" target="_blank" class="btn">RESERVAR</a>
         </div>
-        <div class="card">
-            <img src="img/creed.png">
-            <h3>Creed Aventus Millésime</h3>
-            <a href="https://amzn.to/3uZiTqL" target="_blank" class="btn">RESERVAR</a>
-        </div>
-        <div class="card">
-            <img src="img/armani-prive.png">
-            <h3>Armani Privé Rose d'Arabie</h3>
-            <a href="https://amzn.to/49K0e9V" target="_blank" class="btn">RESERVAR</a>
-        </div>
-        <div class="card">
-            <img src="img/layton.png">
-            <h3>Parfums de Marly Layton</h3>
-            <a href="https://amzn.to/3Ie1u8p" target="_blank" class="btn">RESERVAR</a>
-        </div>
-        <div class="card">
-            <img src="img/ysl-tuxedo.png">
-            <h3>YSL Vestiaire Tuxedo</h3>
-            <a href="https://amzn.to/3T6oY3B" target="_blank" class="btn">RESERVAR</a>
-        </div>
-        <div class="card">
-            <img src="img/flowerbomb.png">
-            <h3>V&R Flowerbomb Ruby Orchid</h3>
-            <a href="https://amzn.to/3uY7X8X" target="_blank" class="btn">RESERVAR</a>
-        </div>
-        <div class="card">
-            <img src="img/prada.png">
-            <h3>Prada Paradoxe Intense</h3>
-            <a href="https://amzn.to/3T4bF7q" target="_blank" class="btn">RESERVAR</a>
-        </div>
-        <div class="card">
-            <img src="img/valentino.png">
-            <h3>Valentino Born In Roma</h3>
-            <a href="https://amzn.to/49L9WzI" target="_blank" class="btn">RESERVAR</a>
-        </div>
-    </main>
-
+        </main>
     <footer>&copy; 2026 GOLDEN FRAGRANCE | EXCLUSIVE CURATION</footer>
-
     <script>
         const canvas = document.getElementById('bg-canvas');
         for(let i=0; i<70; i++) {
