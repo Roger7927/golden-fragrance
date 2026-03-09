@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOLDEN FRAGRANCE | Elite Collection</title>
+    <title>GOLDEN FRAGRANCE | Elite Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --gold: #c5a059;
             --gold-light: #f5d76e;
-            --dark-bg: #050505;
-            --glass: rgba(255, 255, 255, 0.02);
+            --dark: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--dark-bg);
-            color: #ffffff;
+            background: var(--dark);
+            color: #fff;
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
-        /* --- BACKGROUND DE ELITE (ESTRELAS E BOLHAS) --- */
+        /* --- BACKGROUND ANIMADO (ESTRELAS E BOLHAS) --- */
         #bg-canvas {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -59,13 +58,13 @@
             100% { transform: translateY(-125vh) rotate(360deg); opacity: 0; }
         }
 
-        /* --- LAYOUT MODERNO --- */
-        header { padding: 100px 20px; text-align: center; }
+        /* --- INTERFACE --- */
+        header { padding: 80px 20px; text-align: center; }
         
         h1 { 
             font-family: 'Cinzel', serif; 
             font-size: clamp(2rem, 8vw, 3.5rem);
-            letter-spacing: 15px; 
+            letter-spacing: 12px; 
             background: linear-gradient(to right, #fff, var(--gold), #fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -74,43 +73,67 @@
 
         .showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; padding: 40px 8%;
-            max-width: 1600px; margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; padding: 40px 5%;
+            max-width: 1400px; margin: 0 auto;
         }
 
         .card {
             background: var(--glass);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(197, 160, 89, 0.1);
-            padding: 40px; text-align: center;
-            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            padding: 30px; text-align: center;
+            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border-radius: 5px;
         }
 
         .card:hover { 
             border-color: var(--gold); 
-            transform: translateY(-20px); 
+            transform: translateY(-15px); 
             background: rgba(197, 160, 89, 0.05);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
 
-        .card img { width: 100%; height: 300px; object-fit: contain; margin-bottom: 30px; }
+        .card img { 
+            width: 100%; 
+            height: 220px; 
+            object-fit: contain; 
+            margin-bottom: 20px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+        }
         
-        h3 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 2px; margin-bottom: 25px; min-height: 3rem; display: flex; align-items: center; justify-content: center;}
+        h3 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 0.9rem; 
+            letter-spacing: 1px; 
+            margin-bottom: 20px; 
+            min-height: 2.5rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            line-height: 1.4;
+        }
 
         .btn {
             display: inline-block;
             text-decoration: none;
             color: var(--gold);
             border: 1px solid var(--gold);
-            padding: 15px 35px;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
+            padding: 12px 25px;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
             font-weight: 600;
             transition: 0.4s;
+            width: 100%;
         }
 
-        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); }
+        .btn:hover { 
+            background: var(--gold); 
+            color: #000; 
+            box-shadow: 0 0 20px var(--gold); 
+        }
+
+        footer { text-align: center; padding: 50px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -119,22 +142,77 @@
 
     <header>
         <h1>Golden Fragrance</h1>
-        <p style="color: var(--gold); letter-spacing: 8px; font-size: 0.7rem; margin-top: 20px;">CURADORIA EXCLUSIVA DE LUXO</p>
+        <p style="color: var(--gold); letter-spacing: 5px; font-size: 0.75rem; margin-top: 15px;">THE ELITE COLLECTION</p>
     </header>
 
     <main class="showcase">
         <div class="card">
-            <img src="img/jadore-lor.png" alt="Christian Dior">
-            <h3>Christian Dior J'Adore L'Or Essence De Parfum</h3>
+            <img src="img/jadore-lor.png">
+            <h3>Christian Dior J'Adore L'Or</h3>
             <a href="https://amzn.to/4ceffa" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/sauvage.png">
+            <h3>Dior Sauvage Elixir</h3>
+            <a href="https://amzn.to/3v09I6H" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/bleu-chanel.png">
+            <h3>Bleu De Chanel Parfum</h3>
+            <a href="https://amzn.to/3T7yR9s" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/baccarat.png">
+            <h3>MFK Baccarat Rouge 540</h3>
+            <a href="https://amzn.to/48I6pZ2" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/lost-cherry.png">
+            <h3>Tom Ford Lost Cherry</h3>
+            <a href="https://amzn.to/49I8D6o" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/creed.png">
+            <h3>Creed Aventus Millésime</h3>
+            <a href="https://amzn.to/3uZiTqL" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/armani-prive.png">
+            <h3>Armani Privé Rose d'Arabie</h3>
+            <a href="https://amzn.to/49K0e9V" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/layton.png">
+            <h3>Parfums de Marly Layton</h3>
+            <a href="https://amzn.to/3Ie1u8p" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/ysl-tuxedo.png">
+            <h3>YSL Vestiaire Tuxedo</h3>
+            <a href="https://amzn.to/3T6oY3B" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/flowerbomb.png">
+            <h3>V&R Flowerbomb Ruby Orchid</h3>
+            <a href="https://amzn.to/3uY7X8X" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/prada.png">
+            <h3>Prada Paradoxe Intense</h3>
+            <a href="https://amzn.to/3T4bF7q" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="img/valentino.png">
+            <h3>Valentino Born In Roma</h3>
+            <a href="https://amzn.to/49L9WzI" target="_blank" class="btn">RESERVAR</a>
         </div>
     </main>
 
+    <footer>&copy; 2026 GOLDEN FRAGRANCE | EXCLUSIVE CURATION</footer>
+
     <script>
         const canvas = document.getElementById('bg-canvas');
-        
-        // Estrelas (Pontos luminosos)
-        for(let i=0; i<60; i++) {
+        for(let i=0; i<70; i++) {
             let star = document.createElement('div');
             star.className = 'star';
             star.style.left = Math.random() * 100 + '%';
@@ -143,15 +221,13 @@
             star.style.setProperty('--d', Math.random() * 3 + 2 + 's');
             canvas.appendChild(star);
         }
-
-        // Bolhas Flutuantes
         for(let i=0; i<15; i++) {
             let bubble = document.createElement('div');
             bubble.className = 'bubble';
             bubble.style.left = Math.random() * 100 + '%';
-            let size = Math.random() * 60 + 20 + 'px';
+            let size = Math.random() * 50 + 20 + 'px';
             bubble.style.width = bubble.style.height = size;
-            bubble.style.setProperty('--s', Math.random() * 10 + 8 + 's');
+            bubble.style.setProperty('--s', Math.random() * 10 + 7 + 's');
             canvas.appendChild(bubble);
         }
     </script>
