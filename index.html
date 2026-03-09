@@ -3,154 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOLDEN FRAGRANCE | Elite Experience</title>
+    <title>GOLDEN FRAGRANCE | Elite Selection</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #c5a059;
-            --gold-light: #f5d76e;
-            --dark: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-        }
+        :root { --gold: #c5a059; --gold-light: #f5d76e; --dark: #050505; --glass: rgba(255, 255, 255, 0.03); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: var(--dark);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        #bg-canvas {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at center, #111 0%, #050505 100%);
-        }
-        .star {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle var(--d) infinite ease-in-out;
-        }
-        .bubble {
-            position: absolute;
-            bottom: -100px;
-            background: radial-gradient(circle at 30% 30%, var(--gold-light), var(--gold));
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: rise var(--s) infinite linear;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.4); box-shadow: 0 0 10px #fff; }
-        }
-        @keyframes rise {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.3; }
-            100% { transform: translateY(-125vh) rotate(360deg); opacity: 0; }
-        }
+        body { background: var(--dark); color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        #bg-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at center, #111 0%, #050505 100%); }
+        .star { position: absolute; background: #fff; border-radius: 50%; animation: twinkle var(--d) infinite; }
+        .bubble { position: absolute; bottom: -100px; background: radial-gradient(circle at 30% 30%, var(--gold-light), var(--gold)); border-radius: 50%; opacity: 0.3; animation: rise var(--s) infinite linear; }
+        @keyframes twinkle { 0%, 100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 1; transform: scale(1.3); } }
+        @keyframes rise { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 0.3; } 100% { transform: translateY(-120vh); opacity: 0; } }
         header { padding: 80px 20px; text-align: center; }
-        h1 { 
-            font-family: 'Cinzel', serif; 
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            letter-spacing: 12px; 
-            background: linear-gradient(to right, #fff, var(--gold), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-        }
-        .showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px; padding: 40px 5%;
-            max-width: 1400px; margin: 0 auto;
-        }
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(197, 160, 89, 0.1);
-            padding: 30px; text-align: center;
-            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            border-radius: 5px;
-        }
-        .card:hover { 
-            border-color: var(--gold); 
-            transform: translateY(-15px); 
-            background: rgba(197, 160, 89, 0.05);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-        }
-        .card img { 
-            width: 100%; height: 220px; 
-            object-fit: contain; margin-bottom: 20px;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
-        }
-        h3 { 
-            font-family: 'Cinzel', serif; font-size: 0.9rem; 
-            letter-spacing: 1px; margin-bottom: 20px; min-height: 2.5rem; 
-            display: flex; align-items: center; justify-content: center;
-        }
-        .btn {
-            display: inline-block; text-decoration: none; color: var(--gold);
-            border: 1px solid var(--gold); padding: 12px 25px;
-            font-size: 0.65rem; letter-spacing: 3px; font-weight: 600;
-            transition: 0.4s; width: 100%;
-        }
-        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 20px var(--gold); }
-        footer { text-align: center; padding: 50px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
+        h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 12px; background: linear-gradient(to right, #fff, var(--gold), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
+        .showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 5%; max-width: 1400px; margin: 0 auto; }
+        .card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(197, 160, 89, 0.1); padding: 30px; text-align: center; transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1); border-radius: 10px; }
+        .card:hover { border-color: var(--gold); transform: translateY(-15px); background: rgba(197, 160, 89, 0.1); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+        .card img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); }
+        h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 20px; min-height: 3rem; display: flex; align-items: center; justify-content: center; line-height: 1.4; }
+        .btn { display: inline-block; text-decoration: none; color: var(--gold); border: 1px solid var(--gold); padding: 12px; font-size: 0.7rem; letter-spacing: 3px; font-weight: 600; transition: 0.4s; width: 100%; }
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); }
+        footer { text-align: center; padding: 60px; color: #444; font-size: 0.7rem; letter-spacing: 3px; border-top: 1px solid rgba(197, 160, 89, 0.1); }
     </style>
 </head>
 <body>
     <div id="bg-canvas"></div>
-    <header>
-        <h1>Golden Fragrance</h1>
-        <p style="color: var(--gold); letter-spacing: 5px; font-size: 0.75rem; margin-top: 15px;">THE ELITE COLLECTION</p>
-    </header>
+    <header><h1>Golden Fragrance</h1><p style="color: var(--gold); letter-spacing: 8px; font-size: 0.8rem; margin-top: 15px;">EXPERIÊNCIA DE ELITE</p></header>
     <main class="showcase">
         <div class="card">
-            <img src="img/jadore.png">
-            <h3>J'Adore de Christian Dior Eau de Parfum</h3>
+            <img src="https://m.media-amazon.com/images/I/61S6h8-9LAL._AC_SL1000_.jpg">
+            <h3>J'Adore Christian Dior Eau de Parfum</h3>
             <a href="https://amzn.to/4ulgpkZ" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
-            <img src="img/sauvage.png">
+            <img src="https://m.media-amazon.com/images/I/61S3yBvD76L._AC_SL1500_.jpg">
             <h3>Dior Sauvage Elixir Intense</h3>
             <a href="https://amzn.to/40U1DEd" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
-            <img src="img/bleu-chanel.png">
-            <h3>Bleu De Chanel Parfum</h3>
+            <img src="https://m.media-amazon.com/images/I/51p6P1y3m3L._AC_SL1000_.jpg">
+            <h3>Bleu De Chanel Parfum Pour Homme</h3>
             <a href="https://amzn.to/4dbvaAA" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
-            <img src="img/baccarat.png">
-            <h3>MFK Baccarat Rouge 540</h3>
+            <img src="https://m.media-amazon.com/images/I/61k8v9t6OFL._AC_SL1500_.jpg">
+            <h3>MFK Baccarat Rouge 540 Extrait</h3>
             <a href="https://amzn.to/4lmsLFl" target="_blank" class="btn">RESERVAR</a>
         </div>
         <div class="card">
-            <img src="img/tobacco-vanille.png">
-            <h3>Tom Ford Private Blend Tobacco Vanille</h3>
-            <a href="https://amzn.to/4lyGvOf" target="_blank" class="btn">RESERVAR</a>
+            <img src="https://m.media-amazon.com/images/I/512Y8O2B-5L._AC_SL1000_.jpg">
+            <h3>Tom Ford Ombré Leather EDP</h3>
+            <a href="https://amzn.to/3v6qI4p" target="_blank" class="btn">RESERVAR</a>
         </div>
-        </main>
-    <footer>&copy; 2026 GOLDEN FRAGRANCE | EXCLUSIVE CURATION</footer>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/51I7I1L7UHL._AC_SL1000_.jpg">
+            <h3>Armani Code Parfum Refillable</h3>
+            <a href="https://amzn.to/3uXL7A2" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/51i17m3IayL._AC_SL1000_.jpg">
+            <h3>YSL MYSLF Eau de Parfum</h3>
+            <a href="https://amzn.to/3T7B9E1" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71N6iP-9JGL._AC_SL1500_.jpg">
+            <h3>Azzaro Wanted by Night</h3>
+            <a href="https://amzn.to/3uY9J9Z" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/51vGf7o6QPL._AC_SL1000_.jpg">
+            <h3>Prada Paradoxe Intense</h3>
+            <a href="https://amzn.to/3T4bF7q" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/61mI-8m6p3L._AC_SL1000_.jpg">
+            <h3>Valentino Born In Roma Donna</h3>
+            <a href="https://amzn.to/49L9WzI" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71X8Xm6W9PL._AC_SL1500_.jpg">
+            <h3>Versace Eros Flame Intense</h3>
+            <a href="https://amzn.to/3v1I6M2" target="_blank" class="btn">RESERVAR</a>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/61y8BvI6SPL._AC_SL1000_.jpg">
+            <h3>Terre d'Hermès Parfum Pure</h3>
+            <a href="https://amzn.to/3uY8K9O" target="_blank" class="btn">RESERVAR</a>
+        </div>
+    </main>
+    <footer>&copy; 2026 GOLDEN FRAGRANCE | THE ART OF LUXURY CURATION</footer>
     <script>
         const canvas = document.getElementById('bg-canvas');
-        for(let i=0; i<70; i++) {
+        for(let i=0; i<80; i++) {
             let star = document.createElement('div');
             star.className = 'star';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
             star.style.width = star.style.height = Math.random() * 2 + 'px';
-            star.style.setProperty('--d', Math.random() * 3 + 2 + 's');
+            star.style.setProperty('--d', Math.random() * 4 + 2 + 's');
             canvas.appendChild(star);
         }
-        for(let i=0; i<15; i++) {
+        for(let i=0; i<18; i++) {
             let bubble = document.createElement('div');
             bubble.className = 'bubble';
             bubble.style.left = Math.random() * 100 + '%';
-            let size = Math.random() * 50 + 20 + 'px';
+            let size = Math.random() * 45 + 15 + 'px';
             bubble.style.width = bubble.style.height = size;
-            bubble.style.setProperty('--s', Math.random() * 10 + 7 + 's');
+            bubble.style.setProperty('--s', Math.random() * 12 + 8 + 's');
             canvas.appendChild(bubble);
         }
     </script>
