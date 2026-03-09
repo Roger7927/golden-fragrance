@@ -10,15 +10,15 @@
             --gold: #c5a059; 
             --gold-light: #f5d76e; 
             --dark: #050505; 
-            /* Aumentamos a opacidade para 0.95 para bloquear as bolhas atrás do card */
-            --glass: rgba(10, 10, 10, 0.95); 
+            /* Opacidade alta para os cards bloquearem o movimento das bolhas atrás deles */
+            --glass: rgba(10, 10, 10, 0.96); 
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { background: var(--dark); color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
-        /* --- FUNDO E ANIMAÇÕES (CAMADA MAIS BAIXA) --- */
+        /* --- CAMADAS DE FUNDO (Z-INDEX 1) --- */
         #bg-canvas { 
             position: fixed; 
             top: 0; 
@@ -46,11 +46,11 @@
         @keyframes rise { 0% { transform: translateY(0) rotate(0deg); opacity: 0; } 50% { opacity: 0.2; } 100% { transform: translateY(-125vh) rotate(360deg); opacity: 0; } }
 
         /* --- HEADER --- */
-        header { padding: 80px 20px; text-align: center; position: relative; z-index: 10; }
+        header { padding: 80px 20px; text-align: center; position: relative; z-index: 100; }
         h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 8vw, 4rem); letter-spacing: 12px; background: linear-gradient(to right, #fff, var(--gold), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; animation: fadeIn 2s ease-in; }
         .subtitle { color: var(--gold); letter-spacing: 8px; font-size: 0.8rem; margin-top: 10px; text-transform: uppercase; }
 
-        /* --- GRID E CARDS (Z-INDEX SUPERIOR) --- */
+        /* --- GRID DE PRODUTOS (Z-INDEX 200 - SEMPRE NA FRENTE) --- */
         .showcase { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -59,20 +59,21 @@
             max-width: 1400px; 
             margin: 0 auto; 
             position: relative;
-            z-index: 100; /* Garante que os cards fiquem acima de qualquer animação */
+            z-index: 200; 
         }
         
         .card { 
             background: var(--glass); 
-            backdrop-filter: blur(25px); 
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(30px); 
+            -webkit-backdrop-filter: blur(30px);
             border: 1px solid rgba(197, 160, 89, 0.25); 
             padding: 40px 30px; 
             text-align: center; 
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
             border-radius: 20px; 
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover { 
@@ -90,11 +91,11 @@
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.8)); 
             transition: 0.5s; 
         }
-        .card:hover img { transform: scale(1.1); }
+        .card:hover img { transform: scale(1.05); }
 
         h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 25px; min-height: 3rem; display: flex; align-items: center; justify-content: center; color: #f0f0f0; }
 
-        /* --- BOTÃO --- */
+        /* --- BOTÃO DE AÇÃO --- */
         .btn { 
             display: inline-block; 
             text-decoration: none; 
@@ -107,7 +108,7 @@
             transition: 0.4s; 
             width: 100%; 
             position: relative;
-            z-index: 110;
+            z-index: 300;
         }
 
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); }
@@ -131,10 +132,13 @@
         <div class="card"><img src="img/armani.png"><h3>Armani Code EDP</h3><a href="https://amzn.to/4sV2vET" target="_blank" class="btn">RESERVAR</a></div>
         <div class="card"><img src="img/myslf.png"><h3>YSL MYSLF EDP</h3><a href="https://amzn.to/4sB5i5U" target="_blank" class="btn">RESERVAR</a></div>
         <div class="card"><img src="img/azzaro.png"><h3>Azzaro The Most Wanted</h3><a href="https://amzn.to/3OQVmGV" target="_blank" class="btn">RESERVAR</a></div>
-        <div class="card"><img src="img/prada.png"><h3>Prada Paradoxe EDP</h3><a href="https://amzn.to/3uY8K9O" target="_blank" class="btn">RESERVAR</a></div>
+        
+        <div class="card"><img src="img/prada.png"><h3>Prada Paradoxe EDP</h3><a href="https://www.amazon.com.br/PRADA-PARADOXE-FEM-EAU-PARFUM/dp/B0B9T782L1" target="_blank" class="btn">RESERVAR</a></div>
+        
         <div class="card"><img src="img/versace.png"><h3>Versace Eros Flame</h3><a href="https://amzn.to/4rsbtIp" target="_blank" class="btn">RESERVAR</a></div>
         <div class="card"><img src="img/hermes.png"><h3>Terre d'Hermès Intense</h3><a href="https://amzn.to/46N1XIy" target="_blank" class="btn">RESERVAR</a></div>
-        <div class="card"><img src="img/valentino.png"><h3>Valentino Born In Roma</h3><a href="https://amzn.to/3Z98K98" target="_blank" class="btn">RESERVAR</a></div>
+        
+        <div class="card"><img src="img/valentino.png"><h3>Valentino Born In Roma</h3><a href="https://www.amazon.com.br/Valentino-Donna-Roma-Feminino-Parfum/dp/B07YF6D7R1" target="_blank" class="btn">RESERVAR</a></div>
     </main>
 
     <script>
